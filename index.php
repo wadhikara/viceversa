@@ -2,15 +2,19 @@
 
 require 'vendor/autoload.php';
 
-use Nasution\Terbilang\Terbilang;
-use Satyakresna\Masehi\Masehi;
+use Masehi\Converter as MasehiConverter;
 
-// Menggunakan library nasution/terbilang
-$terbilang = new Terbilang();
-echo $terbilang->convert(123456);
+$masehi = new MasehiConverter;
 
-// Menggunakan library satyakresna/masehi
-$masehi = new Masehi();
-echo $masehi->tanggalSekarang();
+echo MasehiConverter::convertDate(array(
+    "date" => "now",
+    "format" => "l, d M Y"
+  ));
+  echo "\n";
+  # Output: Minggu, 02 Des 2018
+
+echo terbilang(421);
+
+echo "\n";
 
 ?>
